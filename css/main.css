@@ -2,6 +2,8 @@
   --blue: #0066ff;
   --black: #000000;
   --white: #ffffff;
+  --grey: #747474;
+  --price-color: #2c3140;
 }
 * {
   box-sizing: border-box;
@@ -23,39 +25,56 @@
   font-family: "montserrat bold";
   src: url("../fonts/Montserrat/static/Montserrat-Bold.ttf");
 }
-.section-pricing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  padding: 6rem 4rem;
+@font-face {
+  font-family: "montserrat extraBold";
+  src: url("../fonts/Montserrat/static/Montserrat-ExtraBold.ttf");
 }
-.section-pricing > h2 {
-  color: var(--black);
-  font-size: 4rem;
+@font-face {
+  font-family: "montserrat black";
+  src: url("../fonts/Montserrat/static/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: "roboto medium";
+  src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 2rem;
+  padding: 2.4rem;
+}
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header ul li:not(:first-child) {
+  margin-left: 3rem;
+}
+header h1 a {
+  color: #0a0047;
+  font-size: 1.8rem;
   font-family: "montserrat bold";
   font-weight: 600;
+  text-transform: capitalize;
+  text-decoration: none;
 }
-.section-pricing > p {
-  color: var(--black);
-  font-size: 1.6rem;
+header h1 a span {
+  color: #a1d24c;
+}
+header nav ul li a {
+  color: #0a0047;
+  font-size: 1.4rem;
   font-family: "montserrat medium";
   font-weight: 500;
-  text-align: center;
-  line-height: 180%;
+  text-transform: capitalize;
+  text-decoration: none;
 }
-.section-pricing > p > span {
-  display: block;
-  text-align: center;
-}
-.buttons {
-  display: flex;
-}
-.buttons button:first-child {
-  width: 12rem;
-  height: 4rem;
-  background-color: var(--blue);
+header nav ul li:last-child a {
+  width: 7.6rem;
+  height: 3.4rem;
+  background-color: #1465fa;
   border: none;
   color: var(--white);
   text-align: center;
@@ -64,34 +83,54 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  font-family: "poppins semiBold";
+  font-size: 1.4rem;
+  font-family: "montserrat semiBold";
   font-weight: 600;
   text-transform: capitalize;
-  border-radius: 3.2rem;
+  border-radius: 0.4rem;
 }
-.buttons button:last-child {
-  width: 12rem;
-  height: 4rem;
-  background-color: var(--white);
-  border: none;
-  color: rgba(0, 0, 0, 0.3);
+.section-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 6rem 2rem;
+}
+.section-pricing > h2 {
+  color: var(--black);
+  font-size: 6.4rem;
+  font-family: "montserrat black";
+  font-weight: 900;
   text-align: center;
-  vertical-align: center;
-  text-decoration: none;
+  margin-bottom: 3.9rem;
+}
+.section-pricing > ul {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-family: "poppins semiBold";
+  gap: 7rem;
+}
+.section-pricing > ul > li {
+  font-size: 1.8rem;
+  font-family: "montserrat semiBold";
   font-weight: 600;
-  text-transform: capitalize;
-  border-radius: 3.2rem;
+  list-style-image: url(../img/check.svg);
 }
 .pricing-table {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  /* gap: 2rem; */
+  margin-top: 7rem;
+  width: 33.33%;
+}
+.pricing-table > section {
+  padding: 3rem;
+}
+
+.heading {
+  margin-bottom: 2.3rem;
+}
+.button {
+  margin-bottom: 5.1rem;
 }
 .pricing-table h3 {
   color: var(--black);
@@ -104,57 +143,85 @@
 .pricing-table h3 span {
   display: block;
   color: var(--black);
-  font-size: 4rem;
+  font-size: 2.4rem;
   font-family: "montserrat bold";
-  font-weight: 700;
+  font-weight: 600;
   text-transform: capitalize;
-  margin-top: 1.6rem;
+}
+.pricing-table h3 span:nth-child(2) {
+  font-size: 6.4rem;
+  font-family: "montserrat extraBold";
+  font-weight: 800;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.pricing-table h3 span:last-child {
+  color: var(--grey);
+  font-size: 1.4rem;
+  font-family: "montserrat medium";
+  font-weight: 500;
+}
+.pricing-table ul {
+  border-top: 2px solid var(--grey);
 }
 .pricing-table li {
-  color: var(--black);
-  font-size: 1.8rem;
-  font-family: "montserrat regular";
-  font-weight: 400;
-  margin-left: 40px;
-  list-style-type: disc;
+  color: var(--grey);
+  font-size: 1.4rem;
+  font-family: "roboto medium";
+  font-weight: 500;
+  text-align: center;
 }
-.pricing-table li:not(:first-child) {
-  margin-top: 2.4rem;
+.pricing-table li {
+  margin-top: 1.3rem;
 }
-.pricing-table li::marker {
+.pricing-table section:nth-child(1) .button a:link,
+.pricing-table section:nth-child(1) .button a:visited,
+.pricing-table section:nth-child(2) .button a:link,
+.pricing-table
+  section:nth-child(2)
+  .button
+  a:visited
+  .pricing-table
+  section:nth-child(3)
+  .button
+  a:link,
+.pricing-table section:nth-child(3) .button a:visited {
+  width: 22.3rem;
+  height: 5.2rem;
+  background-color: var(--white);
+  border: 0.3rem solid var(--blue);
   color: var(--blue);
-}
-.pricing-table section {
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5rem;
-  box-shadow: 0 1rem 2rem 0 rgba(0, 40, 100, 0.25);
-}
-a:link,
-a:visited {
-  width: 20rem;
-  height: 6rem;
-  background-color: var(--blue);
-  border: none;
-  color: var(--white);
   text-align: center;
   vertical-align: center;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  font-family: "poppins semiBold";
+  font-size: 1.4rem;
+  font-family: "montserrat bold";
   font-weight: 600;
   text-transform: capitalize;
-  border-radius: 0.8rem;
+  border-radius: 0.3rem;
 }
 a:hover,
 a:active {
-  /* color: #000; */
 }
 a:focus {
-  /* border: 1px solid red; */
+}
+.pricing-table section:nth-child(2) {
+  background-color: var(--price-color);
+}
+.pricing-table section:nth-child(2) .heading h3 span {
+  color: var(--white);
+}
+.pricing-table section:nth-child(2) ul {
+  border-top: 2px solid var(--white);
+}
+.pricing-table section:nth-child(2) ul li {
+  color: var(--white);
+}
+.pricing-table section:nth-child(2) .button a:link,
+.pricing-table section:nth-child(2) .button a:visited {
+  background-color: var(--blue);
+  color: var(--white);
 }
