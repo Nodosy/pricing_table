@@ -1,0 +1,160 @@
+:root {
+  --blue: #0066ff;
+  --black: #000000;
+  --white: #ffffff;
+}
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@font-face {
+  font-family: "montserrat regular";
+  src: url("../fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "montserrat medium";
+  src: url("../fonts/Montserrat/static/Montserrat-Medium.ttf");
+}
+@font-face {
+  font-family: "montserrat semiBold";
+  src: url("../fonts/Montserrat/static/Montserrat-SemiBold.ttf");
+}
+@font-face {
+  font-family: "montserrat bold";
+  src: url("../fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+.section-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 6rem 4rem;
+}
+.section-pricing > h2 {
+  color: var(--black);
+  font-size: 4rem;
+  font-family: "montserrat bold";
+  font-weight: 600;
+}
+.section-pricing > p {
+  color: var(--black);
+  font-size: 1.6rem;
+  font-family: "montserrat medium";
+  font-weight: 500;
+  text-align: center;
+  line-height: 180%;
+}
+.section-pricing > p > span {
+  display: block;
+  text-align: center;
+}
+.buttons {
+  display: flex;
+}
+.buttons button:first-child {
+  width: 12rem;
+  height: 4rem;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  text-align: center;
+  vertical-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "poppins semiBold";
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 3.2rem;
+}
+.buttons button:last-child {
+  width: 12rem;
+  height: 4rem;
+  background-color: var(--white);
+  border: none;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  vertical-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "poppins semiBold";
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 3.2rem;
+}
+.pricing-table {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+.pricing-table h3 {
+  color: var(--black);
+  font-size: 2.4rem;
+  font-family: "montserrat semiBold";
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+.pricing-table h3 span {
+  display: block;
+  color: var(--black);
+  font-size: 4rem;
+  font-family: "montserrat bold";
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-top: 1.6rem;
+}
+.pricing-table li {
+  color: var(--black);
+  font-size: 1.8rem;
+  font-family: "montserrat regular";
+  font-weight: 400;
+  margin-left: 40px;
+  list-style-type: disc;
+}
+.pricing-table li:not(:first-child) {
+  margin-top: 2.4rem;
+}
+.pricing-table li::marker {
+  color: var(--blue);
+}
+.pricing-table section {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  box-shadow: 0 1rem 2rem 0 rgba(0, 40, 100, 0.25);
+}
+a:link,
+a:visited {
+  width: 20rem;
+  height: 6rem;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  text-align: center;
+  vertical-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "poppins semiBold";
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 0.8rem;
+}
+a:hover,
+a:active {
+  /* color: #000; */
+}
+a:focus {
+  /* border: 1px solid red; */
+}
